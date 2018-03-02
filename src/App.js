@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
-import album from '.components/album';
+import album from './components/album';
 
 class App extends Component {
   render() {
