@@ -13,7 +13,10 @@ class Library extends Component {
         {
             this.state.albums.map( (album, index) =>
               <div key ={index} >
-                {albums.title}
+                <img src={album.albumCover} alt={album.title} />
+                <div>{album.title}</div>
+                <div>{album.artist}</div>
+                <div>{album.songs.length} songs</div>
               </div>
             )
          }
