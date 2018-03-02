@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
-import album from './components/album';
+import Album from './components/album';
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
         <main>
           <Route exact path="/" component={Landing} />
           <Route path="/Library" component={Library} />
-          <Route path="/album" component={album} />
+          <Route path="/album/:slug" component={Album} />
         </main>
       </div>
     );
