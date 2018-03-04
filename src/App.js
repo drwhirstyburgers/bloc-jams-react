@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
@@ -9,6 +9,7 @@ import Album from './components/album';
 class App extends Component {
   render() {
     return (
+      <MuiThemeProvider>
       <div className="App">
         <header>
           <nav>
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/album/:slug" component={Album} />
         </main>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
