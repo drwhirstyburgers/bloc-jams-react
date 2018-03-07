@@ -22,8 +22,9 @@ class PlayerBar extends Component {
           className="seek-bar"
           value={(this.props.currentTime / this.props.duration) || 0}
           max="1"
-          min="0" 
+          min="0"
           step="0.01"
+          onChange={this.props.handleTimeChange}
         />
         <div className="total-time">{this.props.duration}</div>
         </section>
