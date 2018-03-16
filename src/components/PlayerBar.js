@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '.././styles/PlayerBar.css';
 
 class PlayerBar extends Component {
   render() {
     return (
-      <section className="player-bar">
+      <section className="player-bar" align="center">
         <section id="buttons">
           <button id="previous" onClick={this.props.handlePrevClick}>
             <span className="ion-skip-backward"></span>

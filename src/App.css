@@ -1,17 +1,50 @@
-.App {
-  text-align: center;
+h1 {
+  text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+img {
+  float: left;
+  margin-left: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+nav {
+  float: right;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+#lib {
+  padding: 1px 4px 1px 4px;
+  margin-right: 20px;
+  text-decoration: none;
+  background-color: rgb(232, 44, 122);
   color: white;
+  border-radius: 10px;
+}
+
+#land {
+  padding: 1px 4px 1px 4px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: rgb(232, 44, 122);
+  color: white;
+  border-radius: 10px;
+}
+
+header {
+  background-color: black;
+  height: 50px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.underheader {
+  background-color: rgb(232, 44, 122);
+  height: 20px;
+  width: max;
 }
 
 .App-title {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import '.././styles/Album.css';
 
 class Album extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       volume: 0.8,
-      isPlaying: false
+      isPlaying: false,
+      isHovered: false
     };
 
     this.audioElement = document.createElement('audio');
@@ -39,7 +41,7 @@ class Album extends Component {
 
   componentWillUnmount() {
     this.audioElement.src = null;
-    this.audioElement.removeEventListener('timeupdate'. this.eventListeners.timeupdate );
+    this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate );
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
   }
 
@@ -113,15 +115,13 @@ class Album extends Component {
   render() {
     return (
       <section className="album">
+        <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
-          <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
-          </div>
         </section>
-        <table id="song-list">
+        <table id="song-list" align="center">
            <colgroup>
              <col id="song-number-column" />
              <col id="song-title-column" />
@@ -130,12 +130,19 @@ class Album extends Component {
            <tbody>
            {
              this.state.album.songs.map( (song, index) =>
-               <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+               <tr className="song" key={index} onClick={() => this.handleSongClick(song)}
+                 onMouseEnter={() => this.setState({isHovered: index+1})}
+                 onMouseLeave={() => this.setState({isHovered: false})}>
                  <td className="song-actions">
-                   <button>
-                     <span className="song-number">{index + 1}</span>
+                   <button id="song-action-btns">
+                   { (this.state.currentSong.title === song.title) ?
+                     <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
+                     :
+                     (this.state.isHovered === index+1) ?
                      <span className="ion-play"></span>
-                     <span className="ion-pause"></span>
+                     :
+                     <span className="song-number">{index+1}</span>
+                   }
                    </button>
                  </td>
                  <td className="song-title">{song.title}</td>
