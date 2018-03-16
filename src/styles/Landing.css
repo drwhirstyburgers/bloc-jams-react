@@ -1,0 +1,19 @@
+.hero-title {
+  text-align: center;
+  font-size: 5rem;
+  background-color: rgb(232, 44, 122);
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 10px;
+}
+
+.selling-points {
+  background-color: rgb(232, 44, 122);
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 10px;
+}
