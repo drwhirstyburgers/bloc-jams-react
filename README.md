@@ -1,4 +1,4 @@
-#BlocJams
+# BlocJams
 A music app bootstrapped with NPM and built using React.
 
 ![Image of Landing page](https://github.com/drwhirstyburgers/bloc-jams-react/blob/master/public/assets/images/BlocJamsLand.JPG)
